@@ -6,9 +6,9 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
 
     private WebDriver driver;
-    private By usernameInput = By.id("user_login");
-    private By passwordInput = By.id("user_pass");
-    private By loginBtn = By.id("wppb-submit");
+    private By usernameInput = By.id("user-name");
+    private By passwordInput = By.id("password");
+    private By loginBtn = By.id("login-button");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;

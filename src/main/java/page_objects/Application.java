@@ -11,14 +11,11 @@ public class Application {
     }
 
     public LoginPage navigateToLoginPage() {
-        driver.get("https://testare-manuala.locdejoacapentruitsti.com/blog/login/");
+        driver.get("https://www.saucedemo.com/");
         return new LoginPage(driver);
     }
 
-    public RegisterPage navigateToRegisterPage() {
-        driver.get("https://testare-manuala.locdejoacapentruitsti.com/blog/register/");
-        return new RegisterPage(driver);
-    }
+
 }
 
 
