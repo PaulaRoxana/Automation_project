@@ -5,10 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
+
     private WebDriver driver;
     private By usernameInput = By.id("user-name");
     private By passwordInput = By.id("password");
     private By loginBtn = By.id("login-button");
+    private By errorMessage1 = By.cssSelector("h3[data-test='error']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -30,5 +32,10 @@ public class LoginPage {
         fillUsername(username);
         fillPassword(password);
         submit();
+    }
+
+    public String validateTheErrorMessage1() {
+        return driver.findElement(errorMessage1).getText();
+
     }
 }

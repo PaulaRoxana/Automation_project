@@ -15,7 +15,10 @@ public class Application {
         return new LoginPage(driver);
     }
 
-
+    public ProductsPage navigateToProductsPage() {
+        driver.get(" https://www.saucedemo.com/inventory.html");
+        return new ProductsPage(driver);
+    }
 }
 
 
