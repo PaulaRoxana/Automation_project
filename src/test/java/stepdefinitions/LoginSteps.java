@@ -4,13 +4,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import page_objects.Application;
 import page_objects.LoginPage;
 import page_objects.ProductsPage;
 
 import static stepdefinitions.Hooks.driver;
 
-public class Steps {
+public class LoginSteps {
 
     LoginPage loginPage;
     ProductsPage productsPage;
@@ -21,13 +22,13 @@ public class Steps {
         loginPage = new Application(driver).navigateToLoginPage();
     }
 
-    @When("Fill the Username field with correct username {string}")
+    @When("Fill the Username field with username {string}")
     public void fillTheUsernameFieldWithCorrectUsername(String text) {
         loginPage.fillUsername(text);
 
     }
 
-    @And("Fill the Password field with correct password {string}")
+    @And("Fill the Password field with password {string}")
     public void fillThePasswordFieldWithCorrectPassword(String text) {
         loginPage.fillPassword(text);
     }
@@ -44,9 +45,9 @@ public class Steps {
     }
 
 
-    @Then("Validate the error message for incorrect Username or Password is correct")
-    public void validateTheErrorMessageForIncorrectUsernameOrPasswordIsCorrect() {
-        loginPage.validateTheErrorMessage1();
+    @Then("Validate the error message for incorrect Username and or Password is correct")
+    public void validateTheErrorMessageForIncorrectUsernameAndOrPasswordIsCorrect() {
+        Assert.assertEquals(loginPage.getErrorMessageForIncorrectUsernameOrPassword(), loginPage.theErrorMessageForIncorrectUsernameOrPassword());
 
     }
 }

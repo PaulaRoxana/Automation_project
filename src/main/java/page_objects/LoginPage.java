@@ -11,9 +11,35 @@ public class LoginPage {
     private By passwordInput = By.id("password");
     private By loginBtn = By.id("login-button");
     private By errorMessage1 = By.cssSelector("h3[data-test='error']");
+    private String errorMessageForIncorrectUsernameOrPassword = "Epic sadface: Username and password do not match any user in this service";
+
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+    }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public By getUsernameInput() {
+        return usernameInput;
+    }
+
+    public By getPasswordInput() {
+        return passwordInput;
+    }
+
+    public By getLoginBtn() {
+        return loginBtn;
+    }
+
+    public By getErrorMessage1() {
+        return errorMessage1;
+    }
+
+    public String getErrorMessageForIncorrectUsernameOrPassword() {
+        return errorMessageForIncorrectUsernameOrPassword;
     }
 
     public void fillUsername(String username) {
@@ -34,7 +60,7 @@ public class LoginPage {
         submit();
     }
 
-    public String validateTheErrorMessage1() {
+    public String theErrorMessageForIncorrectUsernameOrPassword() {
         return driver.findElement(errorMessage1).getText();
 
     }
