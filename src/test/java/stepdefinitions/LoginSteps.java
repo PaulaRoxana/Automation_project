@@ -47,7 +47,23 @@ public class LoginSteps {
 
     @Then("Validate the error message for incorrect Username and or Password is correct")
     public void validateTheErrorMessageForIncorrectUsernameAndOrPasswordIsCorrect() {
-        Assert.assertEquals(loginPage.getErrorMessageForIncorrectUsernameOrPassword(), loginPage.theErrorMessageForIncorrectUsernameOrPassword());
 
+        Assert.assertTrue(loginPage.getErrorMessageForIncorrectUsernameOrPassword()
+                .contains("Epic sadface: Username and password do not match any user in this service"));
     }
+
+    @Then("Validate the error message for missing Username is correct")
+    public void validateTheErrorMessageForMissingUsernameIsCorrect() {
+
+        Assert.assertTrue(loginPage.getErrorMessageForMissingUsername().contains("Epic sadface: Username is required"));
+    }
+
+
+    @Then("Validate the error message for missing Password is correct")
+    public void validateTheErrorMessageForMissingPasswordIsCorrect() {
+
+        Assert.assertTrue(loginPage.getErrorMessageForMissingPassword().contains("Epic sadface: Password is required"));
+    }
+
+
 }

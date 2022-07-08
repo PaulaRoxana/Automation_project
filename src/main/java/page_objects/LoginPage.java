@@ -10,9 +10,10 @@ public class LoginPage {
     private By usernameInput = By.id("user-name");
     private By passwordInput = By.id("password");
     private By loginBtn = By.id("login-button");
-    private By errorMessage1 = By.cssSelector("h3[data-test='error']");
+    private By errorMessageElement= By.cssSelector("h3[data-test='error']");
     private String errorMessageForIncorrectUsernameOrPassword = "Epic sadface: Username and password do not match any user in this service";
-
+    private String errorMessageForMissingUsername = "Epic sadface: Username is required";
+    private String errorMessageForMissingPassword = "Epic sadface: Password is required";
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -35,11 +36,19 @@ public class LoginPage {
     }
 
     public By getErrorMessage1() {
-        return errorMessage1;
+        return errorMessageElement;
     }
 
     public String getErrorMessageForIncorrectUsernameOrPassword() {
         return errorMessageForIncorrectUsernameOrPassword;
+    }
+
+    public String getErrorMessageForMissingUsername() {
+        return errorMessageForMissingUsername;
+    }
+
+    public String getErrorMessageForMissingPassword() {
+        return errorMessageForMissingPassword;
     }
 
     public void fillUsername(String username) {
@@ -60,8 +69,6 @@ public class LoginPage {
         submit();
     }
 
-    public String theErrorMessageForIncorrectUsernameOrPassword() {
-        return driver.findElement(errorMessage1).getText();
 
-    }
+
 }
