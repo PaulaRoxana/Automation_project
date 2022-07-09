@@ -9,8 +9,8 @@ Feature: Product page tests
     And Click on LOGIN button
     Then Open the Products page
     And Click on the menu buton
-    Then Validate that there are 4 options unfolded
-    And Validate the names of the options
+    Then Validate that there are four options unfolded
+    And Validate the names of the four options unfolded
 
     Examples:
       | correctUsername           |  correctPassword |
