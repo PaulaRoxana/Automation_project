@@ -1,6 +1,5 @@
 package page_objects;
 
-import com.google.common.collect.AbstractTable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +9,7 @@ import java.util.List;
 
 public class ProductsPageMenu {
 
-       private WebDriver driver;
+    private WebDriver driver;
     private By menuButton = By.cssSelector("#react-burger-menu-btn");
     private By unwrappedMenu = By.cssSelector(".bm-item-list");
     private List<WebElement> unfoldedOptions = driver.findElements(unwrappedMenu);
@@ -29,6 +28,10 @@ public class ProductsPageMenu {
 
     public By getUnwrappedMenuButton() {
         return unwrappedMenu;
+    }
+
+    public List<WebElement> getUnfoldedOptions() {
+        return unfoldedOptions;
     }
 
     public void clickOnMenuButon() {

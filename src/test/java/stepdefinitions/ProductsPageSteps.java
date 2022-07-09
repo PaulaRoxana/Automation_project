@@ -1,11 +1,8 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.junit.Assert;
-import page_objects.Application;
 import page_objects.LoginPage;
 import page_objects.ProductsPageMenu;
 
@@ -15,6 +12,11 @@ public class ProductsPageSteps {
     LoginPage loginPage;
     ProductsPageMenu productsPage;
 
+    @Then("Validate that PRODUCTS element is displayed")
+    public boolean validateThatProductsElementIsDisplayed() {
+       return productsPage.;
+
+    }
 
     @And("Click on the menu buton")
     public void clickOnTheMenuButon() {
@@ -32,10 +34,12 @@ public class ProductsPageSteps {
     public void validateTheNamesOfTheFourOptionsUnfolded() {
         productsPage.checkTheNamesOfTheFourOptionsUnfolded();
 
-        Assert.assertTrue(productsPage.unfoldedOptions.get(0).getText().equals("ALL ITEMS"));
-        Assert.assertTrue(unfoldedOptions.get(1).getText().equals("ABOUT"));
-        Assert.assertTrue(unfoldedOptions.get(2).getText().equals("LOGOUT"));
-        Assert.assertTrue(unfoldedOptions.get(3).getText().equals("RESET APP STATE"));
+        Assert.assertTrue(productsPage.getUnfoldedOptions().get(0).getText().equals("ALL ITEMS"));
+        Assert.assertTrue(productsPage.getUnfoldedOptions().get(1).getText().equals("ABOUT"));
+        Assert.assertTrue(productsPage.getUnfoldedOptions().get(2).getText().equals("LOGOUT"));
+        Assert.assertTrue(productsPage.getUnfoldedOptions().get(3).getText().equals("RESET APP STATE"));
 
     }
+
+
 }

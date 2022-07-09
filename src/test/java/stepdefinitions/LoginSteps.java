@@ -38,14 +38,7 @@ public class LoginSteps {
         loginPage.submit();
     }
 
-    @Then("Open the Products page")
-    public void openTheProductsPage() {
-        productsPage = new Application(driver).navigateToProductsPage();
-
-    }
-
-
-    @Then("Validate the error message for incorrect Username and or Password is correct")
+     @Then("Validate the error message for incorrect Username and or Password is correct")
     public void validateTheErrorMessageForIncorrectUsernameAndOrPasswordIsCorrect() {
 
         Assert.assertTrue(loginPage.getErrorMessageForIncorrectUsernameOrPassword()
