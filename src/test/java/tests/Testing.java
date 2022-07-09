@@ -25,6 +25,8 @@ public class Testing extends BaseTestClass {
         WebElement loginButton = driver.findElement(By.cssSelector("#password"));
         loginButton.submit();
 
+        System.out.println(driver.getCurrentUrl());
+
         WebElement menuButton = driver.findElement(By.cssSelector("#react-burger-menu-btn"));
         Actions builder = new Actions(driver);
         builder.moveToElement(menuButton).click().build().perform();
@@ -35,17 +37,24 @@ public class Testing extends BaseTestClass {
         Assert.assertTrue(unwrappedOptions.size() == 4);
 
 
-        for (int i = 0; i < unwrappedOptions.size(); i++) {
-            System.out.println(unwrappedOptions.get(i).getText());
-        }
+    //    for (int i = 0; i < unwrappedOptions.size(); i++) {
+       //     System.out.println(unwrappedOptions.get(i).getText());
+    //    }
 
 
-        Assert.assertTrue(unwrappedOptions.get(0).getText().equals("ALL ITEMS"));
-        Assert.assertTrue(unwrappedOptions.get(1).getText().equals("ABOUT"));
-        Assert.assertTrue(unwrappedOptions.get(2).getText().equals("LOGOUT"));
-        Assert.assertTrue(unwrappedOptions.get(3).getText().equals("RESET APP STATE"));
+       // Assert.assertTrue(unwrappedOptions.get(0).getText().equals("ALL ITEMS"));
+     //   Assert.assertTrue(unwrappedOptions.get(1).getText().equals("ABOUT"));
+     //   Assert.assertTrue(unwrappedOptions.get(2).getText().equals("LOGOUT"));
+     //   Assert.assertTrue(unwrappedOptions.get(3).getText().equals("RESET APP STATE"));
 
-        System.out.println(driver.findElement(By.id("inventory_sidebar_link")).getText());
+     //   System.out.println(driver.findElement(By.id("inventory_sidebar_link")).getText());
     }
 
+
+    @Test
+    public void checkThePge() {
+
+        driver.get("https://www.saucedemo.com/");
+
+    }
 }

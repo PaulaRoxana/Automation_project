@@ -7,7 +7,7 @@ Feature: Product page tests
     And Fill the Username field with username "<correctUsername>"
     And Fill the Password field with password "<correctPassword>"
     And Click on LOGIN button
-    Then Open the Products page
+    Then Validate that the LOGIN button is not displayed
     And Click on the menu buton
     Then Validate that there are four options unfolded
     And Validate the names of the four options unfolded

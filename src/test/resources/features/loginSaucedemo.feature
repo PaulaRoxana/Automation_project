@@ -6,14 +6,14 @@ Feature: Login tests
        When Fill the Username field with username "<correctUsername>"
        And Fill the Password field with password "<correctPassword>"
        And Click on LOGIN button
-    Then Validate that PRODUCTS element is displayed
+    Then Validate you
 
     Examples:
       | correctUsername           |  correctPassword |
       | standard_user             |  secret_sauce |
       | locked_out_user           |  secret_sauce |
       | problem_user              |  secret_sauce |
-      | performance_glitch_user   |  secret_sauce |
+
 
 
 

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ProductsPageHeader {
+
     private WebDriver driver;
     private By productsElement = By.cssSelector(".title");
 
