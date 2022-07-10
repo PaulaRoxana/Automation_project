@@ -1,10 +1,14 @@
 package page_objects;
 
+import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class ProductsPageMenu {
@@ -32,6 +36,16 @@ public class ProductsPageMenu {
 
     public List<WebElement> getUnfoldedOptions() {
         return unfoldedOptions;
+    }
+
+    public void explicitWaitForTheMenuButtonToAppear() {
+
+              driver.get("https://www.saucedemo.com/inventory.html");
+        driver.findElement(menuButton).click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement finish = wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuButton)));
+
+
     }
 
     public void clickOnMenuButon() {

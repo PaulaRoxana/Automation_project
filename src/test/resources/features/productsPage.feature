@@ -4,13 +4,14 @@ Feature: Product page tests
 
   Scenario Outline: Click on the menu button and validate the number and the names of the options unfolded
     Given Open the Saucedemo web page
-    And Fill the Username field with username "<correctUsername>"
-    And Fill the Password field with password "<correctPassword>"
-    And Click on LOGIN button
-    Then Validate that the LOGIN button is not displayed
-    And Click on the menu buton
+       And Fill the Username field with username "<correctUsername>"
+       And Fill the Password field with password "<correctPassword>"
+       And Click on LOGIN button
+    And Check you are on Products Page
+    And Wait for the menu button to appear
+    When Click on the menu button
     Then Validate that there are four options unfolded
-    And Validate the names of the four options unfolded
+         And Validate the names of the four options unfolded
 
     Examples:
       | correctUsername           |  correctPassword |

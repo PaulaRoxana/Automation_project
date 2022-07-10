@@ -21,7 +21,4 @@ public class ProductsPageHeader {
         return productsElement;
     }
 
-    public boolean isProductsElementDisplayed() {
-        return driver.findElement(productsElement).isDisplayed();
-    }
 }

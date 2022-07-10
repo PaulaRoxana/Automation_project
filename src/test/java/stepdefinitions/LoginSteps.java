@@ -14,7 +14,7 @@ import static stepdefinitions.Hooks.driver;
 public class LoginSteps {
 
     LoginPage loginPage;
-    ProductsPageMenu productsPage;
+    ProductsPageMenu productsPageMenu;
 
 
     @Given("Open the Saucedemo web page")

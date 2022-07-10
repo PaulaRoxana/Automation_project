@@ -2,8 +2,10 @@ package stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import page_objects.LoginPage;
+import page_objects.ProductsPageContent;
 import page_objects.ProductsPageHeader;
 import page_objects.ProductsPageMenu;
 
@@ -12,15 +14,17 @@ import static stepdefinitions.Hooks.driver;
 public class ProductsPageSteps {
     ProductsPageMenu productsPageMenu;
     ProductsPageHeader productsPageHeader;
+    ProductsPageContent productsPageContent;
 
-    @Then("Validate that PRODUCTS element is displayed")
-    public void validateThatProductsElementIsDisplayed() {
-       Assert.assertTrue(productsPageHeader.isProductsElementDisplayed());
+
+    @Then("Check you are on Products Page")
+    public void checkYouAreOnProductsPage() {
+       Assert.assertEquals(productsPageContent.getCurrentURL(), driver.getCurrentUrl());
 
     }
 
-    @And("Click on the menu buton")
-    public void clickOnTheMenuButon() {
+    @When("Click on the menu button")
+    public void clickOnTheMenuButton() {
         productsPageMenu.clickOnMenuButon();
 
     }
@@ -43,10 +47,9 @@ public class ProductsPageSteps {
     }
 
 
-    @Then("Validate you are logged in")
-    public void validateYouAreLoggedIn() {
+    @And("Wait for the menu button to appear")
+    public void waitForTheMenuButtonToAppear() {
 
-
+        productsPageMenu.explicitWaitForTheMenuButtonToAppear();
     }
-
 }

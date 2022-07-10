@@ -3,18 +3,16 @@ Feature: Login tests
   Scenario Outline: Login with correct Username and correct Password
 
     Given Open the Saucedemo web page
-       When Fill the Username field with username "<correctUsername>"
+    When Fill the Username field with username "<correctUsername>"
        And Fill the Password field with password "<correctPassword>"
        And Click on LOGIN button
-    Then Validate that PRODUCTS element is displayed
+    Then Check you are on Products Page
 
     Examples:
       | correctUsername           |  correctPassword |
       | standard_user             |  secret_sauce |
       | locked_out_user           |  secret_sauce |
       | problem_user              |  secret_sauce |
-
-
 
 
   Scenario Outline: Login with correct Username and incorrect Password
