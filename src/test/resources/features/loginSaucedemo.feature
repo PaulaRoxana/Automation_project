@@ -6,7 +6,7 @@ Feature: Login tests
        When Fill the Username field with username "<correctUsername>"
        And Fill the Password field with password "<correctPassword>"
        And Click on LOGIN button
-    Then Validate you
+    Then Validate that PRODUCTS element is displayed
 
     Examples:
       | correctUsername           |  correctPassword |

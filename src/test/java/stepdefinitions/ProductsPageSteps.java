@@ -49,8 +49,4 @@ public class ProductsPageSteps {
 
     }
 
-    @Then("Validate that the LOGIN button is not displayed")
-    public void validateThatTheLOGINButtonIsNotDisplayed() {
-        Assert.assertFalse(pr);
-    }
 }
