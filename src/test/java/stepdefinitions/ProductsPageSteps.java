@@ -12,9 +12,9 @@ import page_objects.ProductsPageMenu;
 import static stepdefinitions.Hooks.driver;
 
 public class ProductsPageSteps {
-    ProductsPageMenu productsPageMenu;
+    ProductsPageMenu productsPageMenu = new ProductsPageMenu(driver);
     ProductsPageHeader productsPageHeader;
-    ProductsPageContent productsPageContent;
+    ProductsPageContent productsPageContent = new ProductsPageContent(driver);
 
 
     @Then("Check you are on Products Page")
@@ -31,7 +31,7 @@ public class ProductsPageSteps {
 
     @Then("Validate that there are four options unfolded")
     public void validateThatThereAreFourOptionsUnfolded() {
-        Assert.assertEquals(4, productsPageMenu.checkTheNumberOfOptionsUnfolded());
+        Assert.assertEquals(4, productsPageMenu.numberOfOptionsUnfolded());
 
     }
 
@@ -47,9 +47,4 @@ public class ProductsPageSteps {
     }
 
 
-    @And("Wait for the menu button to appear")
-    public void waitForTheMenuButtonToAppear() {
-
-        productsPageMenu.explicitWaitForTheMenuButtonToAppear();
-    }
-}
+   }

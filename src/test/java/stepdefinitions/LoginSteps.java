@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import page_objects.Application;
 import page_objects.LoginPage;
+import page_objects.ProductsPageContent;
 import page_objects.ProductsPageMenu;
 
 import static stepdefinitions.Hooks.driver;
@@ -15,6 +16,7 @@ public class LoginSteps {
 
     LoginPage loginPage;
     ProductsPageMenu productsPageMenu;
+    ProductsPageContent productsPageContent;
 
 
     @Given("Open the Saucedemo web page")

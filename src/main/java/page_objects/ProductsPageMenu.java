@@ -15,8 +15,8 @@ public class ProductsPageMenu {
 
     private WebDriver driver;
     private By menuButton = By.cssSelector("#react-burger-menu-btn");
-    private By unwrappedMenu = By.cssSelector(".bm-item-list");
-    private List<WebElement> unfoldedOptions = driver.findElements(unwrappedMenu);
+    private By unwrappedMenu = By.cssSelector(".bm-item.menu-item");
+
 
     public ProductsPageMenu(WebDriver driver) {
         this.driver = driver;
@@ -35,32 +35,36 @@ public class ProductsPageMenu {
     }
 
     public List<WebElement> getUnfoldedOptions() {
-        return unfoldedOptions;
+        return driver.findElements(unwrappedMenu);
     }
 
-    public void explicitWaitForTheMenuButtonToAppear() {
+   // public void explicitWaitForTheMenuButtonToAppear() {
 
-              driver.get("https://www.saucedemo.com/inventory.html");
+   //     driver.get("https://www.saucedemo.com/inventory.html");
+     //   driver.findElement(menuButton).click();
+     //   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    //    WebElement finish = wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuButton)));
+
+
+   // }
+
+    public void clickOnMenuButon() {
+        driver.get("https://www.saucedemo.com/inventory.html");
         driver.findElement(menuButton).click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement finish = wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuButton)));
-
-
-    }
-
-    public void clickOnMenuButon() {
         Actions builder = new Actions(driver);
         builder.moveToElement(driver.findElement(menuButton)).click().build().perform();
     }
 
-    public int checkTheNumberOfOptionsUnfolded() {
-        return unfoldedOptions.size();
+    public int numberOfOptionsUnfolded() {
+        return getUnfoldedOptions().size();
 
     }
 
     public void checkTheNamesOfTheFourOptionsUnfolded() {
-        for (int i = 0; i < unfoldedOptions.size(); i++) {
-            System.out.println(unfoldedOptions.get(i).getText());
+        for (int i = 0; i < numberOfOptionsUnfolded(); i++) {
+            System.out.println(getUnfoldedOptions().get(i).getText());
         }
 
     }
