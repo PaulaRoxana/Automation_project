@@ -1,21 +1,17 @@
 Feature: Product page tests
 
-
-
-  Scenario Outline: Click on the menu button and validate the number and the names of the options unfolded
+  Background: Login to Products Page
     Given Open the Saucedemo web page
-       And Fill the Username field with username "<correctUsername>"
-       And Fill the Password field with password "<correctPassword>"
-       And Click on LOGIN button
+    And Fill the Username field with username "standard_user"
+    And Fill the Password field with password "secret_sauce"
+    And Click on LOGIN button
     Then Check you are on Products Page
+
+  Scenario: Click on the menu button and validate the number and the names of the options unfolded
+
     When Click on the menu button
     Then Validate that there are four options unfolded
          And Validate the names of the four options unfolded
-
-    Examples:
-      | correctUsername           |  correctPassword |
-      | standard_user             |  secret_sauce |
-
 
   Scenario: Validate that the LOGOUT option is diplayed
 
