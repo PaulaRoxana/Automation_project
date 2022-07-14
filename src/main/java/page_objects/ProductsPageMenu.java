@@ -16,6 +16,7 @@ public class ProductsPageMenu {
     private WebDriver driver;
     private By menuButton = By.cssSelector("#react-burger-menu-btn");
     private By unwrappedMenu = By.cssSelector(".bm-item.menu-item");
+    private By allItemsOption = By.cssSelector("#logout_sidebar_link");
 
 
     public ProductsPageMenu(WebDriver driver) {
@@ -66,7 +67,16 @@ public class ProductsPageMenu {
         for (int i = 0; i < numberOfOptionsUnfolded(); i++) {
             System.out.println(getUnfoldedOptions().get(i).getText());
         }
+    }
 
+    public boolean isTheLOGOUTOptionIsDiplayed(){
+        return driver.findElement(By.cssSelector("#logout_sidebar_link")).isDisplayed();
+    }
+
+    public void clickALLITEMSOption(){Actions builder = new Actions(driver);
+       // builder.moveToElement(driver.findElement(menuButton)).click().build().perform();
+
+        driver.findElement(allItemsOption).click();
     }
 
 }

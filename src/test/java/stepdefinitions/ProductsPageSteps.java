@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.junit.Test;
 import page_objects.LoginPage;
 import page_objects.ProductsPageContent;
 import page_objects.ProductsPageHeader;
@@ -46,5 +47,14 @@ public class ProductsPageSteps {
 
     }
 
+    @Then("Validate that the LOGOUT option is diplayed")
+    public void validateThatTheLOGOUTOptionIsDiplayed() {
+       Assert.assertTrue(productsPageMenu.isTheLOGOUTOptionIsDiplayed());
+    }
 
-   }
+    @And("Click on ALL ITEMS option")
+    public void clickOnALLITEMSOption() {
+        productsPageMenu.clickALLITEMSOption();
+
+    }
+}
