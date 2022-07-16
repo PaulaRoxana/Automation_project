@@ -31,7 +31,7 @@ public class ShoppingCartSteps {
 
     @Then("You are redirected to Checkout page")
     public void youAreRedirectedToCheckoutPage() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         Assert.assertEquals(checkoutPage.getCheckoutPageURL(), driver.getCurrentUrl());
     }
 }

@@ -8,12 +8,15 @@ Feature: Shopping Cart tests
     Then Check you are on Products Page
 
 
-    Scenario: Validate that the checkout button works when having at least 1 product added to the shopping cart
-      When Add one product to the shopping cart
-      And Click on shopping cart button
-      And Click on checkout button
-      Then You are redirected to Checkout page
+  Scenario: Validate that the checkout button works when having at least 1 product added to the shopping cart
+    When Add one product to the shopping cart
+    And Click on shopping cart button
+    And Click on checkout button
+    Then You are redirected to Checkout page
 
 
-
+  Scenario: Validate that the checkout button is NOT active when the shopping cart is empty
+    When Click on shopping cart button
+    And the shopping cart is empty
+    Then checkout button is not active
 
