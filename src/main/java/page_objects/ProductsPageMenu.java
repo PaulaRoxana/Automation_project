@@ -16,8 +16,11 @@ public class ProductsPageMenu {
     private WebDriver driver;
     private By menuButton = By.cssSelector("#react-burger-menu-btn");
     private By unwrappedMenu = By.cssSelector(".bm-item.menu-item");
-    private By logoutOption = By.cssSelector("#logout_sidebar_link");
     private By allItemsOption = By.cssSelector("#inventory_sidebar_link");
+
+    private By logoutOption = By.cssSelector("#logout_sidebar_link");
+
+    private By aboutOption = By.cssSelector("#about_sidebar_link");
 
 
     public ProductsPageMenu(WebDriver driver) {
@@ -32,15 +35,22 @@ public class ProductsPageMenu {
         return menuButton;
     }
 
-    public By getUnwrappedMenuButton() {
+    public By getUnwrappedMenu() {
         return unwrappedMenu;
     }
 
-    public List<WebElement> getUnfoldedOptions() {
-        return driver.findElements(unwrappedMenu);
+
+    public By getAllItemsOption() {
+        return allItemsOption;
     }
 
+    public By getLogoutOption() {
+        return logoutOption;
+    }
 
+    public By getAboutOption() {
+        return aboutOption;
+    }
 
     public void clickOnMenuButon() {
         driver.get("https://www.saucedemo.com/inventory.html");
@@ -51,9 +61,12 @@ public class ProductsPageMenu {
         builder.moveToElement(driver.findElement(menuButton)).click().build().perform();
     }
 
+    public List<WebElement> getUnfoldedOptions() {
+        return driver.findElements(unwrappedMenu);
+    }
+
     public int numberOfOptionsUnfolded() {
         return getUnfoldedOptions().size();
-
     }
 
     public void checkTheNamesOfTheFourOptionsUnfolded() {
@@ -62,18 +75,23 @@ public class ProductsPageMenu {
         }
     }
 
-    public boolean isTheLOGOUTOptionIsDiplayed(){
-        return driver.findElement(logoutOption).isDisplayed();
-    }
-
-    public void clickALLITEMSOption(){Actions builder = new Actions(driver);
-       // builder.moveToElement(driver.findElement(menuButton)).click().build().perform();
+    public void clickALLITEMSOption() {
+        Actions builder = new Actions(driver);
+        // builder.moveToElement(driver.findElement(menuButton)).click().build().perform();
 
         driver.findElement(allItemsOption).click();
     }
 
-    public void clickABOUTOption(){
+    public void clickABOUTOption() {
+        driver.findElement(aboutOption).click();
+    }
 
+    public boolean isTheLOGOUTOptionIsDiplayed() {
+        return driver.findElement(logoutOption).isDisplayed();
+    }
+
+    public void clickLOGOUTOption() {
+        driver.findElement(logoutOption).click();
     }
 
 }

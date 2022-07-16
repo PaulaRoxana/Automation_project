@@ -4,23 +4,21 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.junit.Test;
-import page_objects.LoginPage;
 import page_objects.ProductsPageContent;
-import page_objects.ProductsPageHeader;
+import page_objects.ErrorPageAfterAbout;
 import page_objects.ProductsPageMenu;
 
 import static stepdefinitions.Hooks.driver;
 
 public class ProductsPageSteps {
     ProductsPageMenu productsPageMenu = new ProductsPageMenu(driver);
-    ProductsPageHeader productsPageHeader;
     ProductsPageContent productsPageContent = new ProductsPageContent(driver);
+    ErrorPageAfterAbout errorPageAfterAbout = new ErrorPageAfterAbout(driver);
 
 
     @Then("Check you are on Products Page")
     public void checkYouAreOnProductsPage() {
-       Assert.assertEquals(productsPageContent.getCurrentURL(), driver.getCurrentUrl());
+        Assert.assertEquals(productsPageContent.getCurrentURL(), driver.getCurrentUrl());
 
     }
 
@@ -47,10 +45,6 @@ public class ProductsPageSteps {
 
     }
 
-    @Then("Validate that the LOGOUT option is diplayed")
-    public void validateThatTheLOGOUTOptionIsDiplayed() {
-       Assert.assertTrue(productsPageMenu.isTheLOGOUTOptionIsDiplayed());
-    }
 
     @And("Click on ALL ITEMS option")
     public void clickOnALLITEMSOption() {
@@ -61,5 +55,21 @@ public class ProductsPageSteps {
     @And("Click on ABOUT option")
     public void clickOnABOUTOption() {
         productsPageMenu.clickABOUTOption();
+    }
+
+    @Then("Validate that the LOGOUT option is diplayed")
+    public void validateThatTheLOGOUTOptionIsDiplayed() {
+        Assert.assertTrue(productsPageMenu.isTheLOGOUTOptionIsDiplayed());
+    }
+
+    @And("Click on LOGOUT option")
+    public void clickOnLOGOUTOption() {
+        productsPageMenu.clickLOGOUTOption();
+    }
+
+    @Then("Open an error web page")
+    public void openAnErrorWebPage() {
+        Assert.assertEquals(errorPageAfterAbout.getCurrentURL(), driver.getCurrentUrl());
+
     }
 }
