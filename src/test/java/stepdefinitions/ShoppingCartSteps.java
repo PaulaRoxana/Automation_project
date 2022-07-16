@@ -6,6 +6,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import page_objects.*;
 
+import java.time.Duration;
+
 import static stepdefinitions.Hooks.driver;
 
 
@@ -27,8 +29,9 @@ public class ShoppingCartSteps {
         cartPage.clickTheCheckoutButton();
     }
 
-    @Then("Your are redirected to Checkout page")
-    public void yourAreRedirectedToCheckoutPage() {
-        Assert.assertEquals(checkoutPage.getCheckoutpageURL(), driver.getCurrentUrl());
+    @Then("You are redirected to Checkout page")
+    public void youAreRedirectedToCheckoutPage() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        Assert.assertEquals(checkoutPage.getCheckoutPageURL(), driver.getCurrentUrl());
     }
 }

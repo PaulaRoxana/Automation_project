@@ -10,7 +10,7 @@ public class ProductsPageContent {
      private String currentURL = "https://www.saucedemo.com/inventory.html";
      private By shoppingCartButton =  By.cssSelector("#shopping_cart_container");
 
-     private By addBackpackToCart= By.cssSelector("add-to-cart-sauce-labs-backpack");
+     private By addBackpackToCart= By.cssSelector("#add-to-cart-sauce-labs-backpack");
 
 
     public ProductsPageContent(WebDriver driver) {

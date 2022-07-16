@@ -6,15 +6,14 @@ import org.openqa.selenium.WebDriver;
 public class CartPage {
 
     private WebDriver driver;
-    private By checkoutButton = By.cssSelector("");
-
+    private By checkoutButton = By.id("checkout");
 
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
     }
 
-   public void clickTheCheckoutButton(){
-
-   }
+    public void clickTheCheckoutButton() {
+        driver.findElement(checkoutButton).click();
+    }
 }

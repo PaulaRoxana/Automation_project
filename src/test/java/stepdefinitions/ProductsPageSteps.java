@@ -82,4 +82,6 @@ public class ProductsPageSteps {
     public void clickOnShoppingCartButton() {
         productsPageContent.clickTheShoppingCartButton();
     }
+
+
 }

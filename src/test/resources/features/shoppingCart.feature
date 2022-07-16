@@ -12,7 +12,7 @@ Feature: Shopping Cart tests
       When Add one product to the shopping cart
       And Click on shopping cart button
       And Click on checkout button
-      Then Your are redirected to Checkout page
+      Then You are redirected to Checkout page
 
 
 

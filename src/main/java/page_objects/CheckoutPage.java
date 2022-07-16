@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class CheckoutPage {
 
     private WebDriver driver;
-    private String checkoutpageURL = "https://www.saucedemo.com/checkout-step-one.html";
+    private String checkoutPageURL = "https://www.saucedemo.com/checkout-step-one.html";
 
     public CheckoutPage(WebDriver driver) {
         this.driver = driver;
@@ -17,7 +17,7 @@ public class CheckoutPage {
         return driver;
     }
 
-    public String getCheckoutpageURL() {
-        return checkoutpageURL;
+    public String getCheckoutPageURL() {
+        return checkoutPageURL;
     }
 }
