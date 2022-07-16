@@ -72,4 +72,9 @@ public class ProductsPageSteps {
         Assert.assertEquals(errorPageAfterAbout.getCurrentURL(), driver.getCurrentUrl());
 
     }
+
+    @And("Click on RESET APP STATE option")
+    public void clickOnRESETAPPSTATEOption() {
+       productsPageMenu.clickRESETAPPSTATEOption();
+    }
 }

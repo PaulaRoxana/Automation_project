@@ -20,7 +20,9 @@ public class ProductsPageMenu {
 
     private By logoutOption = By.cssSelector("#logout_sidebar_link");
 
+
     private By aboutOption = By.cssSelector("#about_sidebar_link");
+    private By resetAppStateOption = By.cssSelector("#reset_sidebar_link");
 
 
     public ProductsPageMenu(WebDriver driver) {
@@ -50,6 +52,10 @@ public class ProductsPageMenu {
 
     public By getAboutOption() {
         return aboutOption;
+    }
+
+    public By getResetAppStateOption() {
+        return resetAppStateOption;
     }
 
     public void clickOnMenuButon() {
@@ -92,6 +98,10 @@ public class ProductsPageMenu {
 
     public void clickLOGOUTOption() {
         driver.findElement(logoutOption).click();
+    }
+
+    public void clickRESETAPPSTATEOption() {
+        driver.findElement(resetAppStateOption).click();
     }
 
 }

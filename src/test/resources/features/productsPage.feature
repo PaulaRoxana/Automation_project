@@ -27,12 +27,16 @@ Feature: Product page tests
     Then Open the Saucedemo web page
 
 
-  Scenario: Validate that when clicking on ABOUT  option you are redirected on an error page
+  Scenario: Validate that when clicking on ABOUT option you are redirected to another page
     When Click on the menu button
     And Click on ABOUT option
-    Then Open an error web page
+    Then Open the Saucedemo web page
 
 
+  Scenario: Validate that when clicking on RESET APP STATE option you remain on the same page
+    When Click on the menu button
+    And Click on RESET APP STATE option
+    Then Check you are on Products Page
 
 
 
