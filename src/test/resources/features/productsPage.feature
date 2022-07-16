@@ -22,6 +22,9 @@ Feature: Product page tests
     Then Check you are on Products Page
 
   Scenario: Validate that when clicking on ABOUT option you are redirected to LOGIN page
+    When Click on the menu button
+    And Click on ABOUT option
+    Then Open the Saucedemo web page
 
 
   Scenario: Validate that when clicking on LOGOUT option you are redirected on an error page

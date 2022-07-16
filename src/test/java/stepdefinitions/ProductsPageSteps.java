@@ -57,4 +57,9 @@ public class ProductsPageSteps {
         productsPageMenu.clickALLITEMSOption();
 
     }
+
+    @And("Click on ABOUT option")
+    public void clickOnABOUTOption() {
+        productsPageMenu.clickABOUTOption();
+    }
 }
