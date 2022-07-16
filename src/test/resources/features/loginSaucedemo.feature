@@ -13,8 +13,8 @@ Feature: Login tests
     Examples:
       | correctUsername | correctPassword |
       | standard_user   | secret_sauce    |
-   #   | locked_out_user           |  secret_sauce |
-     # | problem_user              |  secret_sauce |
+     # | locked_out_user |  secret_sauce |
+     # | problem_user    |  secret_sauce |
 
 
   Scenario Outline: Login with correct Username and incorrect Password

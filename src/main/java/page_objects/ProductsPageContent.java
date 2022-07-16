@@ -10,6 +10,8 @@ public class ProductsPageContent {
      private String currentURL = "https://www.saucedemo.com/inventory.html";
      private By shoppingCartButton =  By.cssSelector("#shopping_cart_container");
 
+     private By addBackpackToCart= By.cssSelector("add-to-cart-sauce-labs-backpack");
+
 
     public ProductsPageContent(WebDriver driver) {
         this.driver = driver;
@@ -27,8 +29,15 @@ public class ProductsPageContent {
         return shoppingCartButton;
     }
 
+    public By getAddBackpackToCart() {
+        return addBackpackToCart;
+    }
 
     public void clickTheShoppingCartButton(){
         driver.findElement(shoppingCartButton).click();
+    }
+
+    public void addOneProductToCart(){
+        driver.findElement(addBackpackToCart).click();
     }
 }
