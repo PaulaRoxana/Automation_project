@@ -17,7 +17,7 @@ public class ProductsPageMenu {
     private By menuButton = By.cssSelector("#react-burger-menu-btn");
     private By unwrappedMenu = By.cssSelector(".bm-item.menu-item");
     private By logoutOption = By.cssSelector("#logout_sidebar_link");
-    private By allItemsOption = By.cssSelector("#logout_sidebar_link");
+    private By allItemsOption = By.cssSelector("#inventory_sidebar_link");
 
 
     public ProductsPageMenu(WebDriver driver) {
@@ -40,15 +40,7 @@ public class ProductsPageMenu {
         return driver.findElements(unwrappedMenu);
     }
 
-   // public void explicitWaitForTheMenuButtonToAppear() {
 
-   //     driver.get("https://www.saucedemo.com/inventory.html");
-     //   driver.findElement(menuButton).click();
-     //   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    //    WebElement finish = wait.until(ExpectedConditions.visibilityOf(driver.findElement(menuButton)));
-
-
-   // }
 
     public void clickOnMenuButon() {
         driver.get("https://www.saucedemo.com/inventory.html");
