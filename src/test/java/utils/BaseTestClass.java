@@ -17,7 +17,7 @@ public class BaseTestClass {
     }
 
     @Before
-    public void setup() {  //aici putem face orice stim ca avem nevoie la fiecare test
+    public void setup() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }

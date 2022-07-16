@@ -77,4 +77,9 @@ public class ProductsPageSteps {
     public void clickOnRESETAPPSTATEOption() {
        productsPageMenu.clickRESETAPPSTATEOption();
     }
+
+    @And("Click on shopping cart button")
+    public void clickOnShoppingCartButton() {
+        productsPageContent.clickTheShoppingCartButton();
+    }
 }
