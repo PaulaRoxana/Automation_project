@@ -12,7 +12,8 @@ Feature: Shopping Cart tests
     When Add one product to the shopping cart
     And Click on shopping cart button
     And Click on checkout button
-    Then You are redirected to Checkout page
+    Then Check you are redirected to Checkout page
+
 
   Scenario: Validate that when adding a number of products to the cart you find the exact same number of products into the cart
     When Add one product to the shopping cart
@@ -20,8 +21,9 @@ Feature: Shopping Cart tests
     And Click on shopping cart button
     Then Validate that the cart contains the exact number of products added
 
+
   Scenario: Validate that the checkout button is NOT active when the shopping cart is empty
     When Click on shopping cart button
     And the shopping cart is empty
-    Then checkout button is not active
+    Then Validate that checkout button is not active
 

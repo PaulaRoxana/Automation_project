@@ -29,8 +29,8 @@ public class ShoppingCartSteps {
         cartPage.clickTheCheckoutButton();
     }
 
-    @Then("You are redirected to Checkout page")
-    public void youAreRedirectedToCheckoutPage() {
+    @Then("Check you are redirected to Checkout page")
+    public void checkYouAreRedirectedToCheckoutPage() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         Assert.assertEquals(checkoutPage.getCheckoutPageURL(), driver.getCurrentUrl());
     }
@@ -38,16 +38,15 @@ public class ShoppingCartSteps {
     @And("Add a second product to the shopping cart")
     public void addASecondProductToTheShoppingCart() {
         productsPageContent.addASecondProductToCart();
-
     }
 
     @Then("Validate that the cart contains the exact number of products added")
     public void validateThatTheCartContainsTheExactNumberOfProductsAdded() {
-        Assert.assertTrue(cartPage.cartContainsTheNumberOfProductsAdded()==2);
+        Assert.assertEquals(2, cartPage.cartContainsTheNumberOfProductsAdded());
     }
 
     @And("the shopping cart is empty")
     public void theShoppingCartIsEmpty() {
-        Assert.assertTrue(cartPage.cartContainsTheNumberOfProductsAdded()==0);
+        Assert.assertEquals(0, cartPage.cartContainsTheNumberOfProductsAdded());
     }
 }
