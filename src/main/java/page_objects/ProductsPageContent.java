@@ -12,6 +12,8 @@ public class ProductsPageContent {
 
      private By addBackpackToCart= By.cssSelector("#add-to-cart-sauce-labs-backpack");
 
+     private By addBikeLight = By.cssSelector("#add-to-cart-sauce-labs-bike-light");
+
 
     public ProductsPageContent(WebDriver driver) {
         this.driver = driver;
@@ -38,6 +40,10 @@ public class ProductsPageContent {
     }
 
     public void addOneProductToCart(){
-        driver.findElement(addBackpackToCart).click();
+         driver.findElement(addBackpackToCart).click();
+    }
+
+    public void addASecondProductToCart(){
+        driver.findElement(addBikeLight).click();
     }
 }

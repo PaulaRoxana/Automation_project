@@ -34,4 +34,15 @@ public class ShoppingCartSteps {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         Assert.assertEquals(checkoutPage.getCheckoutPageURL(), driver.getCurrentUrl());
     }
+
+    @And("Add a second product to the shopping cart")
+    public void addASecondProductToTheShoppingCart() {
+        productsPageContent.addASecondProductToCart();
+
+    }
+
+    @Then("Validate that the cart contains the exact number of products added")
+    public void validateThatTheCartContainsTheExactNumberOfProductsAdded() {
+        Assert.assertTrue(cartPage.cartContainsTheNumberOfProductsAdded()==2);
+    }
 }
