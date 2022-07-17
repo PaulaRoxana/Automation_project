@@ -19,10 +19,6 @@ public class ErrorPageAfterAbout {
     }
 
     public String getCurrentURL() {
-                return currentURL;
+        return currentURL;
     }
-
-   public void checkYouAreOnErrorPage() {
-       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-   }
 }
