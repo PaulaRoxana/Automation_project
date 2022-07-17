@@ -45,8 +45,7 @@ public class CartPage {
     }
 
     public boolean checkoutButtonNotActiveWhenIsEmptyCart() {
-   return (IsEmptyCart())? driver.findElement(checkoutButton).isDisplayed() == false
-           : driver.findElement(checkoutButton).isDisplayed() == true;
+   return IsEmptyCart() != driver.findElement(checkoutButton).isDisplayed();
 
     }
 

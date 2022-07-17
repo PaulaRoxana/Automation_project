@@ -8,6 +8,8 @@ import page_objects.ProductsPageContent;
 import page_objects.ErrorPageAfterAbout;
 import page_objects.ProductsPageMenu;
 
+import java.time.Duration;
+
 import static stepdefinitions.Hooks.driver;
 
 public class ProductsPageSteps {
@@ -38,10 +40,10 @@ public class ProductsPageSteps {
     public void validateTheNamesOfTheFourOptionsUnfolded() {
         productsPageMenu.checkTheNamesOfTheFourOptionsUnfolded();
 
-        Assert.assertTrue(productsPageMenu.getUnfoldedOptions().get(0).getText().equals("ALL ITEMS"));
-        Assert.assertTrue(productsPageMenu.getUnfoldedOptions().get(1).getText().equals("ABOUT"));
-        Assert.assertTrue(productsPageMenu.getUnfoldedOptions().get(2).getText().equals("LOGOUT"));
-        Assert.assertTrue(productsPageMenu.getUnfoldedOptions().get(3).getText().equals("RESET APP STATE"));
+        Assert.assertEquals("ALL ITEMS", productsPageMenu.getUnfoldedOptions().get(0).getText());
+        Assert.assertEquals("ABOUT", productsPageMenu.getUnfoldedOptions().get(1).getText());
+        Assert.assertEquals("LOGOUT", productsPageMenu.getUnfoldedOptions().get(2).getText());
+        Assert.assertEquals("RESET APP STATE", productsPageMenu.getUnfoldedOptions().get(3).getText());
 
     }
 
@@ -67,8 +69,9 @@ public class ProductsPageSteps {
         productsPageMenu.clickLOGOUTOption();
     }
 
-    @Then("Open an error web page")
-    public void openAnErrorWebPage() {
+    @Then("Check you are on an error page")
+    public void checkYouAreOnAnErrorPage() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Assert.assertEquals(errorPageAfterAbout.getCurrentURL(), driver.getCurrentUrl());
 
     }
@@ -82,6 +85,5 @@ public class ProductsPageSteps {
     public void clickOnShoppingCartButton() {
         productsPageContent.clickTheShoppingCartButton();
     }
-
 
 }

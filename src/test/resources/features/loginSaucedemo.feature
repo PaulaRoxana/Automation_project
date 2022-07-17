@@ -3,9 +3,11 @@ Feature: Login tests
   Background: Open page
     Given Open the Saucedemo web page
 
+# SMOKE (HAPPY FLOW) -> 1TC
+
   Scenario Outline: Login with correct Username and correct Password
 
-    When Fill the Username field with username "<correctUsername>"
+        When Fill the Username field with username "<correctUsername>"
     And Fill the Password field with password "<correctPassword>"
     And Click on LOGIN button
     Then Check you are on Products Page
@@ -16,6 +18,7 @@ Feature: Login tests
      # | locked_out_user |  secret_sauce |
      # | problem_user    |  secret_sauce |
 
+# NEGATIVE TESTING (error handling) -> 4TCs
 
   Scenario Outline: Login with correct Username and incorrect Password
 

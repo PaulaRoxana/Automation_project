@@ -2,6 +2,8 @@ package page_objects;
 
 import org.openqa.selenium.WebDriver;
 
+import java.time.Duration;
+
 public class ErrorPageAfterAbout {
 
     private WebDriver driver;
@@ -17,7 +19,10 @@ public class ErrorPageAfterAbout {
     }
 
     public String getCurrentURL() {
-        return currentURL;
+                return currentURL;
     }
 
+   public void checkYouAreOnErrorPage() {
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+   }
 }
