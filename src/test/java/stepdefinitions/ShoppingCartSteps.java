@@ -45,4 +45,9 @@ public class ShoppingCartSteps {
     public void validateThatTheCartContainsTheExactNumberOfProductsAdded() {
         Assert.assertTrue(cartPage.cartContainsTheNumberOfProductsAdded()==2);
     }
+
+    @And("the shopping cart is empty")
+    public void theShoppingCartIsEmpty() {
+        Assert.assertTrue(cartPage.cartContainsTheNumberOfProductsAdded()==0);
+    }
 }

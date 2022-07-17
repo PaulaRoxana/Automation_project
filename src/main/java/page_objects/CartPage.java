@@ -18,6 +18,19 @@ public class CartPage {
         this.driver = driver;
     }
 
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public By getCheckoutButton() {
+        return checkoutButton;
+    }
+
+    public By getCartQuantityOfAddedProducts() {
+        return cartQuantityOfAddedProducts;
+    }
+
     public void clickTheCheckoutButton() {
         driver.findElement(checkoutButton).click();
     }
