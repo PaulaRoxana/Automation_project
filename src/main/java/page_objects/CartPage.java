@@ -40,4 +40,14 @@ public class CartPage {
         return addedProducts.size();
     }
 
+    public boolean IsEmptyCart(){
+        return driver.findElement(cartQuantityOfAddedProducts).isDisplayed();
+    }
+
+    public boolean checkoutButtonNotActiveWhenIsEmptyCart() {
+   return (IsEmptyCart())? driver.findElement(checkoutButton).isDisplayed() == false
+           : driver.findElement(checkoutButton).isDisplayed() == true;
+
+    }
+
 }

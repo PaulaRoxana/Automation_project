@@ -49,4 +49,9 @@ public class ShoppingCartSteps {
     public void theShoppingCartIsEmpty() {
         Assert.assertEquals(0, cartPage.cartContainsTheNumberOfProductsAdded());
     }
+
+    @Then("Validate that checkout button is not active")
+    public void validateThatCheckoutButtonIsNotActive() {
+        cartPage.checkoutButtonNotActiveWhenIsEmptyCart();
+    }
 }
