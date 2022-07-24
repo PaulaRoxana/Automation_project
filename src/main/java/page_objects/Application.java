@@ -14,9 +14,9 @@ public class Application {
         return new LoginPage(driver);
     }
 
-    public ProductsPageMenu navigateToProductsPage() {
+    public ProductsPage navigateToProductsPage() {
         driver.get(" https://www.saucedemo.com/inventory.html");
-        return new ProductsPageMenu(driver);
+        return new ProductsPage(driver);
     }
 }
 
