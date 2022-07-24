@@ -6,21 +6,18 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import page_objects.*;
 
-import java.time.Duration;
-
 import static stepdefinitions.Hooks.driver;
 
 public class ShoppingCartSteps {
 
-    ProductsPageMenu productsPageMenu = new ProductsPageMenu(driver);
-    ProductsPageContent productsPageContent = new ProductsPageContent(driver);
+    ProductsPage productsPage = new ProductsPage(driver);
     ErrorPageAfterAbout errorPageAfterAbout = new ErrorPageAfterAbout(driver);
     CartPage cartPage = new CartPage(driver);
     CheckoutPage checkoutPage = new CheckoutPage(driver);
 
     @When("Add one product to the shopping cart")
     public void addOneProductToTheShoppingCart() {
-        productsPageContent.addOneProductToCart();
+        productsPage.addOneProductToCart();
     }
     @And("Click on checkout button")
     public void clickOnCheckoutButton() {
@@ -32,7 +29,7 @@ public class ShoppingCartSteps {
     }
     @And("Add a second product to the shopping cart")
     public void addASecondProductToTheShoppingCart() {
-        productsPageContent.addASecondProductToCart();
+        productsPage.addASecondProductToCart();
     }
     @Then("Validate that the cart contains the exact number of products added")
     public void validateThatTheCartContainsTheExactNumberOfProductsAdded() {

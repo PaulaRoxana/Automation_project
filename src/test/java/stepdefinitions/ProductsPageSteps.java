@@ -4,55 +4,53 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import page_objects.ProductsPageContent;
+import page_objects.ProductsPage;
 import page_objects.ErrorPageAfterAbout;
-import page_objects.ProductsPageMenu;
 
 import java.time.Duration;
 
 import static stepdefinitions.Hooks.driver;
 
 public class ProductsPageSteps {
-    ProductsPageMenu productsPageMenu = new ProductsPageMenu(driver);
-    ProductsPageContent productsPageContent = new ProductsPageContent(driver);
+    ProductsPage productsPage = new ProductsPage(driver);
     ErrorPageAfterAbout errorPageAfterAbout = new ErrorPageAfterAbout(driver);
 
     @Then("Check you are on Products Page")
     public void checkYouAreOnProductsPage() {
-        Assert.assertEquals(productsPageContent.getCurrentURL(), driver.getCurrentUrl());
+        Assert.assertEquals(productsPage.getCurrentURL(), driver.getCurrentUrl());
     }
     @When("Click on the menu button")
     public void clickOnTheMenuButton() {
-        productsPageMenu.clickOnMenuButon();
+        productsPage.clickOnMenuButon();
     }
     @Then("Validate that there are four options unfolded")
     public void validateThatThereAreFourOptionsUnfolded() {
-        Assert.assertEquals(4, productsPageMenu.numberOfOptionsUnfolded());
+        Assert.assertEquals(4, productsPage.numberOfOptionsUnfolded());
     }
     @And("Validate the names of the four options unfolded")
     public void validateTheNamesOfTheFourOptionsUnfolded() {
-        productsPageMenu.checkTheNamesOfTheFourOptionsUnfolded();
+        productsPage.checkTheNamesOfTheFourOptionsUnfolded();
 
-        Assert.assertEquals("ALL ITEMS", productsPageMenu.getUnfoldedOptions().get(0).getText());
-        Assert.assertEquals("ABOUT", productsPageMenu.getUnfoldedOptions().get(1).getText());
-        Assert.assertEquals("LOGOUT", productsPageMenu.getUnfoldedOptions().get(2).getText());
-        Assert.assertEquals("RESET APP STATE", productsPageMenu.getUnfoldedOptions().get(3).getText());
+        Assert.assertEquals("ALL ITEMS", productsPage.getUnfoldedOptions().get(0).getText());
+        Assert.assertEquals("ABOUT", productsPage.getUnfoldedOptions().get(1).getText());
+        Assert.assertEquals("LOGOUT", productsPage.getUnfoldedOptions().get(2).getText());
+        Assert.assertEquals("RESET APP STATE", productsPage.getUnfoldedOptions().get(3).getText());
     }
     @And("Click on ALL ITEMS option")
     public void clickOnALLITEMSOption() {
-        productsPageMenu.clickALLITEMSOption();
+        productsPage.clickALLITEMSOption();
     }
     @And("Click on ABOUT option")
     public void clickOnABOUTOption() {
-        productsPageMenu.clickABOUTOption();
+        productsPage.clickABOUTOption();
     }
     @Then("Validate that the LOGOUT option is diplayed")
     public void validateThatTheLOGOUTOptionIsDiplayed() {
-        Assert.assertTrue(productsPageMenu.isTheLOGOUTOptionIsDiplayed());
+        Assert.assertTrue(productsPage.isTheLOGOUTOptionIsDiplayed());
     }
     @And("Click on LOGOUT option")
     public void clickOnLOGOUTOption() {
-        productsPageMenu.clickLOGOUTOption();
+        productsPage.clickLOGOUTOption();
     }
     @Then("Check you are on an error page")
     public void checkYouAreOnAnErrorPage() {
@@ -61,11 +59,11 @@ public class ProductsPageSteps {
     }
     @And("Click on RESET APP STATE option")
     public void clickOnRESETAPPSTATEOption() {
-       productsPageMenu.clickRESETAPPSTATEOption();
+        productsPage.clickRESETAPPSTATEOption();
     }
     @And("Click on shopping cart button")
     public void clickOnShoppingCartButton() {
-        productsPageContent.clickTheShoppingCartButton();
+        productsPage.clickTheShoppingCartButton();
     }
 
 }
