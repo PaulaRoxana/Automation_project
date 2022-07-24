@@ -12,9 +12,9 @@ import page_objects.ProductsPage;
 import static stepdefinitions.Hooks.driver;
 
 public class LoginSteps {
-    LoginPage loginPage;
-    ProductsPageMenu productsPageMenu;
-    ProductsPage productsPageContent;
+    LoginPage loginPage = new LoginPage(driver);
+    ProductsPage productsPage=new ProductsPage(driver);
+
 
     @Given("Open the Saucedemo web page")
     public void openTheSaucedemoWebPage() {
